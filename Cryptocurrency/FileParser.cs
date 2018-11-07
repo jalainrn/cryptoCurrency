@@ -15,7 +15,7 @@ namespace Cryptocurrency
             Currency singleCurrency = new Currency();
             StreamReader readers = new StreamReader(path);
             int count = 0;
-            while (!readers.EndOfStream && count<=50)
+            while (!readers.EndOfStream && count <= 50)
             {
                 var line = readers.ReadLine();
                 var values = line.Split(',');
@@ -25,7 +25,7 @@ namespace Cryptocurrency
                 singleCurrency.symbol = values[2];
                 singleCurrency.website_slug = values[3];
 
-                Console.WriteLine(String.Format(" | {0,7} | {1,40} | {2,10} |", singleCurrency.id.ToString(), singleCurrency.name, singleCurrency.symbol));
+                MenuActions.PrintData(singleCurrency);
 
                 currencies.Add(singleCurrency);
                 count++;
@@ -42,19 +42,6 @@ namespace Cryptocurrency
             writer.Close();
             writer.Dispose();
 
-            ////Pending to change number on top the document
-            //StreamReader readers = new StreamReader(path);
-            //int count = 0;
-
-            //while (readers.ReadLine() != null)
-            //{
-            //    count++;
-            //}
-
-            //Console.WriteLine(count.ToString());
-            //readers.Close();
-            //readers.Dispose();
-
         }
 
         public void Reformat(string fromPath, string toPath)
@@ -68,6 +55,5 @@ namespace Cryptocurrency
                 Write(toPath, lineToCopy);
             }
         }
-
     }
 }

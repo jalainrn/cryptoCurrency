@@ -18,12 +18,11 @@ namespace Cryptocurrency
             IFileParser parser = new FileParser();
             if (!File.Exists(allDataPath))
             {
-                //3 - If no download from the API
+                //3 - If not exit download data from the API
                 MenuActions.RefreshData();
             }
 
-            Console.WriteLine(String.Format(" |{0,7}  | {1,40} | {2,10} |", "Index", "Coin", "Symbol"));
-            Console.WriteLine("--------------------------------------------------------------------");
+            MenuActions.PrintMenuHeaders();
             parser.Read(allDataPath);
             string menuOption = null;
             while (menuOption != "9")

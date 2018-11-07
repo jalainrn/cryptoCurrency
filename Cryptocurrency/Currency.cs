@@ -35,7 +35,7 @@ namespace Cryptocurrency
         public int rank { get; set; }
         public float? circulating_supply { get; set; }
         public float? total_supply { get; set; }
-        public int? max_supply { get; set; }
+        public float? max_supply { get; set; }
         public Quotes quotes { get; set; }
         public int? last_updated { get; set; }
     }

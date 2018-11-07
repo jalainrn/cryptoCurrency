@@ -37,7 +37,7 @@ namespace Cryptocurrency
             var httpResponseMessage = await HttpClient.GetAsync("https://api.coinmarketcap.com/v2/ticker/" + _id.ToString());
 
             if (!httpResponseMessage.IsSuccessStatusCode)
-                throw new Exception("Unable to connect to CoinMarketCap.");
+                throw new Exception("Unable to connect to CoinMarketCap." + httpResponseMessage.ReasonPhrase);
 
             var responseString = await httpResponseMessage.Content.ReadAsStringAsync();
 
