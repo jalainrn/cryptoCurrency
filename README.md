@@ -14,6 +14,7 @@ git clone https://github.com/jalainrn/cryptoCurrency.git
 1 - Check if file data.txt exists in the project directory.
 - If so, loads the data form the file.
 - If not, downloads the data from the CoinMarketCap's API and creates the data.txt file.
+
 2 - Display the menu with three options.
 
 
