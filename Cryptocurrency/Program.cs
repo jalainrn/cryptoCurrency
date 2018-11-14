@@ -21,9 +21,13 @@ namespace Cryptocurrency
                 //3 - If not exit download data from the API
                 MenuActions.RefreshData();
             }
+            else
+            {
+                MenuActions.PrintMenuHeaders();
+                parser.Read(allDataPath);
+            }
 
-            MenuActions.PrintMenuHeaders();
-            parser.Read(allDataPath);
+            //Print Menu
             string menuOption = null;
             while (menuOption != "9")
             {
@@ -37,57 +41,6 @@ namespace Cryptocurrency
                 menuOption = Console.ReadLine();
                 MenuActions.SubmitAction(menuOption);
             }
-            
-
-
-            //result.data.ForEach(c => Console.WriteLine(String.Format(" | {0,7} | {1,40} | {2,10} |", c.id.ToString(), c.name, c.symbol)));
-
-
-
-            //4 - Give the option to Refresh data from the API
-
-
-
-
-
-
-
-            /*
-                        Console.WriteLine("Enter a coin ID to see the detail");
-
-                        int idConsult = Convert.ToInt32(Console.ReadLine());
-
-                        Console.Clear();
-                        //Add more options
-                        //Check is it is a valid Id
-                        if (result.data.Any(x => x.id == idConsult))
-                        {
-                            Task<CurrencyDetail> apiSingleCoin = Service.GetCurrencyDetail(idConsult);
-                            apiSingleCoin.Wait();
-                            CurrencyDetail singleCoin = apiSingleCoin.Result;
-
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Name", singleCoin.data.name));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Id", singleCoin.data.id));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Symbol", singleCoin.data.symbol));
-
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Website Slug", singleCoin.data.website_slug));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Rank", singleCoin.data.rank));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Circulating Supply", singleCoin.data.circulating_supply));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Total Supply", singleCoin.data.total_supply));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Max Supply", singleCoin.data.max_supply));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Symbol", singleCoin.data.symbol));
-                            Console.WriteLine(String.Format("{0,20} : {1,40}", "Last Updated", singleCoin.data.last_updated));
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("It is NOT a valid ID.");
-                        }
-
-                        //Console.WriteLine(id.ToString());
-                        Console.ReadLine();
-                        */
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
     }
 }

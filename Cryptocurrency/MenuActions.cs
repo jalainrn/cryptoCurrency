@@ -120,8 +120,8 @@ namespace Cryptocurrency
                 }
                 catch(AggregateException ex)
                 {
-                    Console.WriteLine("Currency not found...");
-                    Console.WriteLine(ex.InnerExceptions[0].Message);
+                    Console.WriteLine("Currency not found.");
+                    //Console.WriteLine(ex.InnerExceptions[0].Message);
                 }
             }
 
