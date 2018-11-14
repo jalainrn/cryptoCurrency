@@ -15,8 +15,11 @@ git clone https://github.com/jalainrn/cryptoCurrency.git
 - If so, loads the data form the file.
 - If not, downloads the data from the CoinMarketCap's API and creates the data.txt file.
 
-2 - Display the menu with three options.
-
+2 - Display the menu with four options.
+- Delete the data.txt
+- Refresh the data from the API
+- See the detail of a specific currency
+- Exit
 
 
 ## Author
